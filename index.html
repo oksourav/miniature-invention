@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Secure Login Portal</title>
+    <style>
+      body {
+        background-color: #3498db;
+        font-family: Arial, sans-serif;
+      }
+
+      #container {
+        position: relative;
+        margin: 50px auto;
+        width: 350px;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        text-align: center;
+      }
+
+      input[type="password"] {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      input[type="submit"] {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Secure Login Portal</h1>
+      <p>This is the secure login portal.</p>
+      <p>Enter valid credentials to proceed.</p>
+      <form action="index.html" method="post">
+        <input type="password" id="pass" size="8" />
+        <br />
+        <input type="submit" value="Verify" onclick="verify(); return false;" />
+      </form>
+    </div>
+
+    <!-- standard MD5 implementation -->
+    <script type="text/javascript" src="md5.js"></script>
+
+    <script type="text/javascript">
+      function verify() {
+        // Your verification logic here
+        checkpass = document.getElementById("pass").value;
+        split = 4;
+        if (checkpass.substring(0, split) == "tec") {
+          if (checkpass.substring(split * 6, split * 7) == "706c") {
+            if (checkpass.substring(split, split * 2) == "hno{") {
+              if (checkpass.substring(split * 4, split * 5) == "ts_p") {
+                if (checkpass.substring(split * 3, split * 4) == "lien") {
+                  if (checkpass.substring(split * 5, split * 6) == "lz_b") {
+                    if (checkpass.substring(split * 2, split * 3) == "no_c") {
+                      if (checkpass.substring(split * 7, split * 8) == "5}") {
+                        alert("Password Verified");
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        } else {
+          alert("Incorrect password");
+        }
+      }
+    </script>
+  </body>
+</html>
